@@ -8,7 +8,9 @@ English | [中文](https://github.com/Hiwonder/MentorPi/blob/MentorPi-T1/README_
 
 ## Product Overview
 
-Hiwonder MentorPi T1 is a smart raspi car robot powered by Raspberry Pi 5 and supports ROS2. Equipped with tank chassis, high-speed closed-loop encoder motors, Lidar, a 3D depth camera, and large-torque servos, it delivers high-performance capabilities. These include SLAM mapping, path planning, vision recognition, and autonomous driving. With YOLOv5 model training, MentorPi T1 can detect road signs and traffic lights. MentorPi open source robot car also deploys a Multimodal Large AI Model to support more advanced embodied AI applications. To help you unlock its full potential, we offer comprehensive MentorPi T1 tutorials and videos designed to inspire and support your AI creative projects.
+MentorPi is a ROS2 robot car based on Raspberry Pi 5 that supports three chassis configurations: Mecanum wheels, Ackermann, and tank tracks. It is equipped with high-performance hardware including high-speed closed-loop encoder motors, high-precision LiDAR, 3D depth cameras, high-torque servos, and racing-grade tires, enabling advanced AI functions such as SLAM mapping and navigation, path planning, vision recognition, target tracking, and MediaPipe human-machine interaction. Through machine learning with YOLO v5 models, MentorPi can achieve autonomous driving scenario functions such as road sign recognition and traffic light recognition.
+
+MentorPi also deploys multimodal AI large models that can call OpenAI API interfaces online, allowing better environmental understanding, action planning, and task execution to achieve more advanced embodied intelligence applications.
 
 ## Key Features
 
