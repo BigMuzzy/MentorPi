@@ -22,7 +22,7 @@ MentorPi also deploys multimodal AI large models that can call OpenAI API interf
 - **3D Depth Perception** - Stereo vision with depth camera integration
 
 ### Intelligent Control
-- **Modular Chassis Design** - Support for both Mecanum-wheel and Ackermann-wheel configurations
+- **Modular Chassis Design** - Support for three chassis configurations: Mecanum wheels, Ackermann, and tank tracks
 - **Closed-loop Motor Control** - High-precision encoder feedback control
 - **Servo Control** - High-torque servo systems for precise movements
 - **Multi-sensor Fusion** - Integrated sensor data processing
@@ -39,7 +39,7 @@ MentorPi also deploys multimodal AI large models that can call OpenAI API interf
 - **Motors**: High-speed closed-loop encoder motors
 - **Vision System**: 3D depth camera + Lidar sensor
 - **Actuators**: High-torque servos
-- **Chassis**: Modular design with Mecanum-wheel and Ackermann-wheel options
+- **Chassis**: Supports three chassis configurations: Mecanum wheels, Ackermann, and tank tracks
 
 ## Project Structure
 
