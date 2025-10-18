@@ -12,6 +12,14 @@ MentorPi是一款基于树莓派5开发的ROS2机器人小车，它支持麦克�
 
 MentorPi还部署了多模态AI大模型，能够在线调用OpenAI的API接口，可以更好地理解环境、规划行动并执行任务，实现更多高阶具身智能应用。
 
+## 官方资源
+
+### Hiwonder官方
+- **官方网站**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
+- **产品页面**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
+- **官方文档**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
+- **技术支持**: support@hiwonder.com
+
 ## 主要功能
 
 ### AI视觉与导航
@@ -56,22 +64,14 @@ mentorpi/
 └── yolov5_ros2/          # YOLOv5 ROS2集成
 ```
 
-## 官方资源
-
-### Hiwonder官方
-- **官方网站**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
-- **产品页面**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
-- **官方文档**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
-- **技术支持**: support@hiwonder.com
+## 版本信息
+- **当前版本**: MentorPi T1 v1.0.0
+- **支持平台**: 树莓派5
 
 ### 相关技术
 - [ROS2](https://ros.org/) - 机器人操作系统2
 - [OpenCV](https://opencv.org/) - 计算机视觉库
 - [YOLOv5](https://github.com/ultralytics/yolov5) - 目标检测框架
-
-## 版本信息
-- **当前版本**: MentorPi T1 v1.0.0
-- **支持平台**: 树莓派5
 
 ---
 
