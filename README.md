@@ -39,7 +39,7 @@ MentorPi also deploys multimodal AI large models that can call OpenAI API interf
 - **Motors**: High-speed closed-loop encoder motors
 - **Vision System**: 3D depth camera + Lidar sensor
 - **Actuators**: High-torque servos
-- **Chassis**: Professional robotic platform with Ackermann steering
+- **Chassis**: Supports three chassis configurations: Mecanum wheels, Ackermann, and tank tracks
 
 ## Project Structure
 
