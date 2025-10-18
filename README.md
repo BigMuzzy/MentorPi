@@ -12,6 +12,14 @@ MentorPi is a ROS2 robot car based on Raspberry Pi 5 that supports three chassis
 
 MentorPi also deploys multimodal AI large models that can call OpenAI API interfaces online, allowing better environmental understanding, action planning, and task execution to achieve more advanced embodied intelligence applications.
 
+## Official Resources
+
+### Official Hiwonder
+- **Official Website**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
+- **Product Page**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
+- **Official Documentation**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
+- **Technical Support**: support@hiwonder.com
+
 ## Key Features
 
 ### AI Vision & Navigation
@@ -60,22 +68,14 @@ mentorpi/
 └── yolov5_ros2/          # YOLOv5 ROS2 integration
 ```
 
-## Official Resources
-
-### Official Hiwonder
-- **Official Website**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
-- **Product Page**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
-- **Official Documentation**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
-- **Technical Support**: support@hiwonder.com
+## Version Information
+- **Current Version**: MentorPi M1 v1.0.0
+- **Supported Platform**: Raspberry Pi 5
 
 ### Related Technologies
 - [ROS2](https://ros.org/) - Robot Operating System 2
 - [OpenCV](https://opencv.org/) - Computer Vision Library
 - [YOLOv5](https://github.com/ultralytics/yolov5) - Object Detection Framework
-
-## Version Information
-- **Current Version**: MentorPi M1 v1.0.0
-- **Supported Platform**: Raspberry Pi 5
 
 ---
 
