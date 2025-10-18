@@ -1,0 +1,76 @@
+# MentorPi T1
+
+[English](https://github.com/Hiwonder/MentorPi/blob/MentorPi-T1/README.md) | 中文
+
+<p align="center">
+  <img src="./sources/images/image.webp" alt="MentorPi T1 Logo" width="400"/>
+</p>
+
+## 产品介绍
+
+幻尔科技MentorPi T1是一款基于树莓派5驱动的智能树莓派机器人小车，支持ROS2。配备履带底盘、高速闭环编码器电机、激光雷达、3D深度相机和大扭矩舵机，提供高性能能力。包括SLAM建图、路径规划、视觉识别和自动驾驶。通过YOLOv5模型训练，MentorPi T1可以检测路标和交通信号灯。MentorPi开源机器人小车还部署了多模态大型AI模型，支持更先进的具身AI应用。为了帮助您释放其全部潜力，我们提供全面的MentorPi T1教程和视频，旨在激发和支持您的AI创意项目。
+
+## 主要功能
+
+### AI视觉与导航
+- **SLAM建图** - 实时同步定位与建图
+- **路径规划** - 智能路线规划和导航
+- **自动驾驶** - 具备避障功能的自动驾驶能力
+- **YOLOv5识别** - 先进的路标和交通信号灯目标检测
+- **视觉识别** - 先进的计算机视觉能力
+
+### 智能控制
+- **履带底盘** - 坚固的履带车辆设计，适用于全地形导航
+- **闭环电机控制** - 高精度编码器反馈控制
+- **大扭矩舵机** - 重型操作的高功率舵机系统
+- **多传感器融合** - 集成传感器数据处理
+
+### 编程接口
+- **ROS2集成** - 完整的机器人操作系统2支持
+- **Python编程** - 全面的Python SDK
+- **多模态AI模型** - 先进的具身AI能力
+- **开源平台** - 完整的开源平台支持定制化
+
+## 硬件配置
+- **处理器**: 树莓派5
+- **操作系统**: ROS2兼容Linux系统
+- **电机**: 高速闭环编码器电机
+- **视觉系统**: 3D深度相机 + 激光雷达传感器
+- **执行器**: 大扭矩舵机
+- **底盘**: 履带底盘，配备履带轮增强机动性
+
+## 项目结构
+
+```
+mentorpi/
+├── app/                    # 应用模块
+├── bringup/               # 系统启动和配置
+├── driver/                # 硬件驱动
+├── example/               # 示例应用和演示
+├── interfaces/            # ROS2消息定义
+├── large_models/          # AI大模型集成
+├── large_models_msgs/     # 大模型消息定义
+├── peripherals/           # 外设支持
+└── yolov5_ros2/          # YOLOv5 ROS2集成
+```
+
+## 官方资源
+
+### Hiwonder官方
+- **官方网站**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
+- **产品页面**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
+- **官方文档**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
+- **技术支持**: support@hiwonder.com
+
+### 相关技术
+- [ROS2](https://ros.org/) - 机器人操作系统2
+- [OpenCV](https://opencv.org/) - 计算机视觉库
+- [YOLOv5](https://github.com/ultralytics/yolov5) - 目标检测框架
+
+## 版本信息
+- **当前版本**: MentorPi T1 v1.0.0
+- **支持平台**: 树莓派5
+
+---
+
+**注**: 所有程序已预装在MentorPi T1机器人系统中，可直接运行。详细使用教程请参考[官方文档](https://docs.hiwonder.com/projects/MentorPi/en/latest/)。
