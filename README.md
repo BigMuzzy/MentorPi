@@ -22,7 +22,7 @@ MentorPi also deploys multimodal AI large models that can call OpenAI API interf
 - **Vision Recognition** - Advanced computer vision capabilities
 
 ### Intelligent Control
-- **Tank Chassis** - Robust tracked vehicle design for all-terrain navigation
+- **Multi-Chassis Design** - Support for three configurations: Mecanum wheels, Ackermann, and tank tracks
 - **Closed-loop Motor Control** - High-precision encoder feedback control
 - **Large-torque Servos** - High-power servo systems for heavy-duty operations
 - **Multi-sensor Fusion** - Integrated sensor data processing
@@ -39,7 +39,7 @@ MentorPi also deploys multimodal AI large models that can call OpenAI API interf
 - **Motors**: High-speed closed-loop encoder motors
 - **Vision System**: 3D depth camera + Lidar sensor
 - **Actuators**: Large-torque servos
-- **Chassis**: Tank chassis with tracked wheels for enhanced mobility
+- **Chassis**: Supports three chassis configurations: Mecanum wheels, Ackermann, and tank tracks
 
 ## Project Structure
 
