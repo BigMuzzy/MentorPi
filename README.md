@@ -8,9 +8,19 @@ English | [中文](https://github.com/Hiwonder/MentorPi/blob/MentorPi-M1/README_
 
 ## Product Overview
 
-MentorPi is a ROS2 robot car based on Raspberry Pi 5 that supports three chassis configurations: Mecanum wheels, Ackermann, and tank tracks. It is equipped with high-performance hardware including high-speed closed-loop encoder motors, high-precision LiDAR, 3D depth cameras, high-torque servos, and racing-grade tires, enabling advanced AI functions such as SLAM mapping and navigation, path planning, vision recognition, target tracking, and MediaPipe human-machine interaction. Through machine learning with YOLO v5 models, MentorPi can achieve autonomous driving scenario functions such as road sign recognition and traffic light recognition.
+**MentorPi: Bridging Theory and Practice in Robotics Learning**
 
-MentorPi also deploys multimodal AI large models that can call OpenAI API interfaces online, allowing better environmental understanding, action planning, and task execution to achieve more advanced embodied intelligence applications.
+MentorPi is designed to close the gap between robotics theory and hands-on experimentation. As a versatile platform built for academic and research environments, it combines cutting-edge AI capabilities with the full power of the ROS 2 framework—giving students a tangible, programmable system for learning, and researchers a reliable platform for rapidly testing and deploying algorithms.
+
+**Adaptable, Intelligent, and Open**
+
+Built with adaptability and intelligence in mind, MentorPi supports Ackermann chassis and Mecanum wheels, enabling operation across diverse terrains and scenarios. Equipped with high-precision LiDAR, 3D depth cameras, closed-loop encoder motors, and other high-performance hardwares, the platform is capable of executing advanced AI tasks such as SLAM-based mapping and navigation, real-time object tracking, and vision-based perception using models like YOLOv11.
+
+**Ready for the Next Frontier in AI Robotics?**
+
+To support cutting-edge research, MentorPi integrates multimodal AI large language models, opening doors to embodied AI and human robot interaction. As an open source platform, MentorPi offers full control and customization, enabling you to modify, extend, and innovate freely.
+
+Explore our MentorPi tutorials to see how you can elevate your AI and robotics projects with a platform built to grow with your ideas.
 
 ## Official Resources
 
