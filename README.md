@@ -6,23 +6,37 @@ English | [中文](https://github.com/Hiwonder/MentorPi/blob/MentorPi-M1/README_
   <img src="./sources/images/image.webp" alt="MentorPi M1 Logo" width="400"/>
 </p>
 
-## Product Overview
+## About MentorPi
 
-Our vision for MentorPi is straightforward: as AI technology continues to advance, we aim to create a cost-effective educational robotics platform that combines the latest AI large language models with ROS 2, enabling AI enthusiasts, students, developers, and innovators to easily learn advanced AI robotics technology and build exciting AI-driven creative projects.
+We created MentorPi with a simple goal: to build an accessible, cost-effective educational robotics platform that integrates AI and ROS 2. By combining powerful large language models with a flexible hardware design, we hope to empower engineers, students, and creators to learn and experiment with AI robotics—and bring their most imaginative projects to life.
 
-MentorPi features robust hardware configuration, powered by an STM32 controller combined with Raspberry Pi 5 as the control system, offering three chassis options to choose from—Mecanum wheels, Ackermann steering, and tank treads—allowing you to select the chassis that best suits your needs.
+<p align="center">
+  <img src="./sources/images/display1.webp" alt="MentorPi Display 1" width="600"/>
+</p>
 
-MentorPi's compact body integrates high-speed encoder motors, LiDAR, 3D depth cameras, AI voice modules, and other high-performance hardware that enables complex AI behaviors, including SLAM-based navigation, real-time object tracking, and even traffic sign recognition using YOLOv11 for autonomous driving capabilities.
+### Built for Real AI and Real Learning
 
-As an open-source platform, MentorPi encourages customization and extension. This year, we not only launched multi-chassis support but also deployed multimodal AI large language models with natural voice interaction capabilities, enabling robots to perform more complex embodied AI tasks.
+MentorPi is built around a robust STM32 + Raspberry Pi 5 control system and offers 3 chassis options: Ackermann chassis, Mecanum wheels and tank chassis, so you can pick the right setup for your application. Despite its compact size, it's packed with capable hardwares: high-speed encoder motors, LiDAR, a 3D depth camera, and an AI voice module. This lets you implement advanced AI behaviors like SLAM-based navigation, real-time object tracking, and traffic sign recognition using YOLOv11—all the way to fully autonomous driving.
 
-Whether you're building autonomous driving projects or exploring human-robot interaction, we welcome you to join our community and help shape the future of MentorPi. Additionally, you can check out the MentorPi tutorials to get started quickly!
+<p align="center">
+  <img src="./sources/images/display2.png" alt="MentorPi Display 2" width="600"/>
+</p>
+
+### Open, Expandable, and Evolving
+
+As a fully open source platform, MentorPi is made for customization and expansion. This year, we've introduced multi-chassis support and integrated multimodal AI models with natural voice interaction—enabling more sophisticated embodied intelligence tasks. Whether you're building autonomous driving systems or exploring human robot interaction, we welcome you to join our community and help shape the future of MentorPi.
+
+<p align="center">
+  <img src="./sources/images/display3.webp" alt="MentorPi Display 3" width="600"/>
+</p>
+
+Get started with our [MentorPi Tutorials](https://docs.hiwonder.com/projects/MentorPi/en/latest/) to bring your first robot to life.
 
 ## Official Resources
 
 ### Official Hiwonder
 - **Official Website**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
-- **Product Page**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
+- **Product Page**: [https://www.hiwonder.com/products/mentorpi-m1](https://www.hiwonder.com/products/mentorpi-m1)
 - **Official Documentation**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
 - **Technical Support**: support@hiwonder.com
 
