@@ -24,7 +24,7 @@ MentorPi is built around a robust STM32 + Raspberry Pi 5 control system and offe
 
 ### Open, Expandable, and Evolving
 
-As a fully open source platform, MentorPi is made for customization and expansion. This year, we've introduced multi-chassis support and integrated multimodal AI models with natural voice interaction—enabling more sophisticated embodied intelligence tasks. Whether you're building autonomous driving systems or exploring human robot interaction, we welcome you to join our community and help shape the future of MentorPi.
+As a fully open source platform, MentorPi is made for customization and expansion. This year, we've introduced multi-chassis support and integrated multimodal AI models with natural voice interaction—enabling more sophisticated embodied intelligence tasks. Whether you're building autonomous driving systems or exploring human robot interaction, we welcome you to join our community and help shape the future of [MentorPi](https://www.hiwonder.com/products/mentorpi-m1).
 
 <p align="center">
   <img src="./sources/images/display3.webp" alt="MentorPi Display 3" width="600"/>
@@ -35,7 +35,7 @@ Get started with our [MentorPi Tutorials](https://docs.hiwonder.com/projects/Men
 ## Official Resources
 
 ### Official Hiwonder
-- **Official Website**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
+- **Official Website**: [https://www.hiwonder.com/](https://www.hiwonder.com/)
 - **Product Page**: [https://www.hiwonder.com/products/mentorpi-m1](https://www.hiwonder.com/products/mentorpi-m1)
 - **Official Documentation**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
 - **Technical Support**: support@hiwonder.com

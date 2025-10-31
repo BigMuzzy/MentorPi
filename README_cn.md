@@ -21,8 +21,8 @@ MentorPi 小巧的机身集成了高速编码器电机、激光雷达、3D 深�
 ## 官方资源
 
 ### Hiwonder官方
-- **官方网站**: [https://www.hiwonder.net/](https://www.hiwonder.net/)
-- **产品页面**: [https://www.hiwonder.com/products/mentorpi](https://www.hiwonder.com/products/mentorpi)
+- **官方网站**: [https://www.hiwonder.com/](https://www.hiwonder.com/)
+- **产品页面**: [https://www.hiwonder.com/products/mentorpi-m1](https://www.hiwonder.com/products/mentorpi-m1)
 - **官方文档**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
 - **技术支持**: support@hiwonder.com
 
