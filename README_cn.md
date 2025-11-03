@@ -12,11 +12,39 @@
 
 MentorPi 拥有强大的硬件配置，它采用STM32控制器+树莓派5作为控制系统，并提供三种底盘可供选择——麦克纳姆轮、阿克曼转向和坦克履带，你可以根据自己的需要选择适合自己的底盘。
 
+<p align="center">
+  <img src="./sources/images/1.png" alt="MentorPi Display 1" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/2.png" alt="MentorPi Display 2" width="600"/>
+</p>
+
 MentorPi 小巧的机身集成了高速编码器电机、激光雷达、3D 深度相机、AI语音模块等高性能硬件，能够实现复杂的 AI 行为，包括基于SLAM 的导航、实时物体追踪，甚至使用 YOLOv11进行交通路标识别，实现无人驾驶。
+
+<p align="center">
+  <img src="./sources/images/3.png" alt="MentorPi Display 3" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/4.png" alt="MentorPi Display 4" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/5.png" alt="MentorPi Display 5" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/6.png" alt="MentorPi Display 6" width="600"/>
+</p>
 
 作为一个开源平台，MentorPi 鼓励定制和扩展。今年，我们不仅推出了多底盘支持，还部署了多模态AI大模型，支持自然语音交互，使机器人能够执行更复杂的具身智能任务。
 
 无论您是构建自动驾驶项目，还是探索人机交互，都欢迎加入我们的社区，共同塑造 MentorPi 的未来。此外，您还可以查看 MentorPi 教程，快速入门！
+
+<p align="center">
+  <img src="./sources/images/7.webp" alt="MentorPi Display 7" width="600"/>
+</p>
 
 ## 官方资源
 
