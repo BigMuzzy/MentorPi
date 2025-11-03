@@ -11,7 +11,11 @@ English | [中文](https://github.com/Hiwonder/MentorPi/blob/MentorPi-A1/README_
 We created MentorPi with a simple goal: to build an accessible, cost-effective educational robotics platform that integrates AI and ROS 2. By combining powerful large language models with a flexible hardware design, we hope to empower engineers, students, and creators to learn and experiment with AI robotics—and bring their most imaginative projects to life.
 
 <p align="center">
-  <img src="./sources/images/display1.webp" alt="MentorPi Display 1" width="600"/>
+  <img src="./sources/images/1.png" alt="MentorPi Display 1" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/2.png" alt="MentorPi Display 2" width="600"/>
 </p>
 
 ### Built for Real AI and Real Learning
@@ -19,7 +23,19 @@ We created MentorPi with a simple goal: to build an accessible, cost-effective e
 MentorPi is built around a robust STM32 + Raspberry Pi 5 control system and offers 3 chassis options: Ackermann chassis, Mecanum wheels and tank chassis, so you can pick the right setup for your application. Despite its compact size, it's packed with capable hardwares: high-speed encoder motors, LiDAR, a 3D depth camera, and an AI voice module. This lets you implement advanced AI behaviors like SLAM-based navigation, real-time object tracking, and traffic sign recognition using YOLOv11—all the way to fully autonomous driving.
 
 <p align="center">
-  <img src="./sources/images/display2.png" alt="MentorPi Display 2" width="600"/>
+  <img src="./sources/images/3.png" alt="MentorPi Display 3" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/4.png" alt="MentorPi Display 4" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/5.png" alt="MentorPi Display 5" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/6.png" alt="MentorPi Display 6" width="600"/>
 </p>
 
 ### Open, Expandable, and Evolving
@@ -27,7 +43,7 @@ MentorPi is built around a robust STM32 + Raspberry Pi 5 control system and offe
 As a fully open source platform, MentorPi is made for customization and expansion. This year, we've introduced multi-chassis support and integrated multimodal AI models with natural voice interaction—enabling more sophisticated embodied intelligence tasks. Whether you're building autonomous driving systems or exploring human robot interaction, we welcome you to join our community and help shape the future of [MentorPi](https://www.hiwonder.com/products/mentorpi-a1).
 
 <p align="center">
-  <img src="./sources/images/display3.webp" alt="MentorPi Display 3" width="600"/>
+  <img src="./sources/images/7.webp" alt="MentorPi Display 7" width="600"/>
 </p>
 
 Get started with our [MentorPi Tutorials](https://docs.hiwonder.com/projects/MentorPi/en/latest/) to bring your first robot to life.
