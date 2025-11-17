@@ -3,20 +3,12 @@
 English | [中文](https://github.com/Hiwonder/MentorPi/blob/MentorPi-T1/README_cn.md)
 
 <p align="center">
-  <img src="./sources/images/image.webp" alt="MentorPi T1 Logo" width="400"/>
+  <img src="./sources/images/image.webp" alt="MentorPi T1" width="600"/>
 </p>
 
 ## About MentorPi
 
 We created MentorPi with a simple goal: to build an accessible, cost-effective educational robotics platform that integrates AI and ROS 2. By combining powerful large language models with a flexible hardware design, we hope to empower engineers, students, and creators to learn and experiment with AI robotics—and bring their most imaginative projects to life.
-
-<p align="center">
-  <img src="./sources/images/1.png" alt="MentorPi Display 1" width="600"/>
-</p>
-
-<p align="center">
-  <img src="./sources/images/2.png" alt="MentorPi Display 2" width="600"/>
-</p>
 
 ### Built for Real AI and Real Learning
 
