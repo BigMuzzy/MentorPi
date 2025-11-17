@@ -3,7 +3,7 @@
 [English](https://github.com/Hiwonder/MentorPi/blob/MentorPi-A1/README.md) | 中文
 
 <p align="center">
-  <img src="./sources/images/image.webp" alt="MentorPi A1 Logo" width="400"/>
+  <img src="./sources/images/image.webp" alt="MentorPi A1" width="600"/>
 </p>
 
 ## 产品介绍
@@ -11,14 +11,6 @@
 我们创造MentorPi 的初衷很简单：随着AI技术的日益发展，我们希望可以打造一个高性价比的教育机器人平台，融合时下最流行的AI大模型技术和ROS2，让热爱AI的工程师、学生、开发者和创新者都能轻松学习先进的AI机器人技术，构建出更多有趣的AI创意项目。
 
 MentorPi 拥有强大的硬件配置，它采用STM32控制器+树莓派5作为控制系统，并提供三种底盘可供选择——麦克纳姆轮、阿克曼转向和坦克履带，你可以根据自己的需要选择适合自己的底盘。
-
-<p align="center">
-  <img src="./sources/images/1.png" alt="MentorPi Display 1" width="600"/>
-</p>
-
-<p align="center">
-  <img src="./sources/images/2.png" alt="MentorPi Display 2" width="600"/>
-</p>
 
 MentorPi 小巧的机身集成了高速编码器电机、激光雷达、3D 深度相机、AI语音模块等高性能硬件，能够实现复杂的 AI 行为，包括基于SLAM 的导航、实时物体追踪，甚至使用 YOLOv11进行交通路标识别，实现无人驾驶。
 
