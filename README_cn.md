@@ -46,6 +46,10 @@ MentorPi 小巧的机身集成了高速编码器电机、激光雷达、3D 深�
 - **官方文档**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
 - **技术支持**: support@hiwonder.com
 
+### 视频教程
+- **MentorPi开源机器人小车：ROS2 & 树莓派5**: [观看](https://www.youtube.com/watch?v=cUjPJp_xUIc)
+- **AI模型能处理SLAM导航吗？看MentorPi证明！**: [观看](https://www.youtube.com/watch?v=RjD6kKQiIyw)
+
 ## 主要功能
 
 ### AI视觉与导航

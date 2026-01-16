@@ -48,6 +48,10 @@ Get started with our [MentorPi Tutorials](https://docs.hiwonder.com/projects/Men
 - **Official Documentation**: [https://docs.hiwonder.com/projects/MentorPi/en/latest/](https://docs.hiwonder.com/projects/MentorPi/en/latest/)
 - **Technical Support**: support@hiwonder.com
 
+### Video Tutorials
+- **MentorPi Open Source Robot Car: ROS2 & Raspberry Pi 5**: [Watch](https://www.youtube.com/watch?v=cUjPJp_xUIc)
+- **Can AI Models Handle SLAM Navigation? See MentorPi Prove It!**: [Watch](https://www.youtube.com/watch?v=RjD6kKQiIyw)
+
 ## Key Features
 
 ### AI Vision & Navigation
