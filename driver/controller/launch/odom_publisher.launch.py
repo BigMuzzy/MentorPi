@@ -53,16 +53,19 @@ def generate_launch_description():
         }.items()
     )
 
+    machine_type = os.environ.get('MACHINE_TYPE', 'MentorPi_Mecanum')
+
     odom_publisher_node = Node(
         package='controller',
         executable='odom_publisher',
         name='odom_publisher',
         output='screen',
         parameters=[os.path.join(controller_package_path, 'config/calibrate_params.yaml'), {
-            'base_frame_id': base_frame, 
+            'base_frame_id': base_frame,
             'odom_frame_id': odom_frame,
             'pub_odom_topic': True,
-            }],  
+            'machine_type': machine_type,
+            }],
     )
 
     return LaunchDescription([

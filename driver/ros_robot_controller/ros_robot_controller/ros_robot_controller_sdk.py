@@ -100,6 +100,9 @@ class Board:
         self.enable_recv = False
         self.frame = []
         self.recv_count = 0
+        self._device = device
+        self._baudrate = baudrate
+        self._timeout = timeout
 
         self.port = serial.Serial(None, baudrate, timeout=timeout)
         self.port.rts = False
@@ -108,6 +111,7 @@ class Board:
         self.port.open()
 
         self.state = PacketControllerState.PACKET_CONTROLLER_STATE_STARTBYTE1
+        self.write_lock = threading.Lock()
         self.servo_read_lock = threading.Lock()
         self.pwm_servo_read_lock = threading.Lock()
 
@@ -130,6 +134,8 @@ class Board:
             PacketFunction.PACKET_FUNC_PWM_SERVO: self.packet_report_pwm_servo
         }
 
+        self.imu_last_recv_time = 0.0
+
         time.sleep(0.5)
         threading.Thread(target=self.recv_task, daemon=True).start()
 
@@ -147,6 +153,7 @@ class Board:
             pass
 
     def packet_report_imu(self, data):
+        self.imu_last_recv_time = time.time()
         try:
             self.imu_queue.put_nowait(data)
         except queue.Full:
@@ -322,8 +329,8 @@ class Board:
         buf.extend(data)
         buf.append(checksum_crc8(bytes(buf[2:])))
         buf = bytes(buf)
-        self.port.write(buf)
-        #print(buf)
+        with self.write_lock:
+            self.port.write(buf)
 
 
     def set_led(self, on_time, off_time, repeat=1, led_id=1):
@@ -394,9 +401,9 @@ class Board:
 
     def bus_servo_enable_torque(self, servo_id, enable):
         if enable:
-            data = struct.pack("<BB", 0x0B, servo_id)
+            data = struct.pack("<BB", 0x0C, servo_id)  # 0x0C = Motor Power On
         else:
-            data = struct.pack("<BB", 0x0C, servo_id)
+            data = struct.pack("<BB", 0x0B, servo_id)  # 0x0B = Motor Power Off
         self.buf_write(PacketFunction.PACKET_FUNC_BUS_SERVO, data)
         time.sleep(0.02)
 
@@ -477,13 +484,36 @@ class Board:
     def bus_servo_read_torque_state(self, servo_id):
         return self.bus_servo_read_and_unpack(servo_id, 0x0D, "<BBbb")
 
+    def reset_port(self):
+        """Close and reopen the serial port to recover from UART stall."""
+        with self.write_lock:
+            try:
+                self.port.close()
+            except Exception:
+                pass
+            time.sleep(0.1)
+            self.port = serial.Serial(None, self._baudrate, timeout=self._timeout)
+            self.port.rts = False
+            self.port.dtr = False
+            self.port.setPort(self._device)
+            self.port.open()
+            # Reset parser state machine
+            self.state = PacketControllerState.PACKET_CONTROLLER_STATE_STARTBYTE1
+            self.frame = []
+            self.recv_count = 0
+        time.sleep(0.2)
+
     def enable_reception(self, enable=True):
         self.enable_recv = enable
 
     def recv_task(self):
         while True:
             if self.enable_recv:
-                recv_data = self.port.read()
+                try:
+                    recv_data = self.port.read()
+                except (serial.SerialException, OSError):
+                    time.sleep(0.1)
+                    continue
                 if recv_data:
                     for dat in recv_data:
                         # print("%0.2X "%dat)

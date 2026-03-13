@@ -93,7 +93,11 @@ class Controller(Node):
         self.declare_parameter('linear_correction_factor', 1.00)
         self.declare_parameter('linear_correction_factor_tank', 0.52)
         self.declare_parameter('angular_correction_factor', 1.00)
-        self.declare_parameter('machine_type', os.environ['MACHINE_TYPE'])
+        self.declare_parameter('machine_type', 'MentorPi_Mecanum')
+        self.declare_parameter('cmd_vel_timeout', 0.5)
+        self._cmd_vel_timeout = self.get_parameter('cmd_vel_timeout').value
+        self._last_cmd_vel_time = time.time()
+        self._robot_stopped = True
         
         self.pub_odom_topic = self.get_parameter('pub_odom_topic').value
         self.base_frame_id = self.get_parameter('base_frame_id').value
@@ -134,11 +138,37 @@ class Controller(Node):
         self.create_subscription(Twist, 'cmd_vel', self.app_cmd_vel_callback, 1)
         self.create_service(Trigger, 'controller/load_calibrate_param', self.load_calibrate_param)
         self.create_service(Trigger, '~/init_finish', self.get_node_state)
+        self._watchdog_timer = self.create_timer(0.1, self._cmd_vel_watchdog)
         self.get_logger().info('\033[1;32m%s\033[0m' % 'start')
 
     def get_node_state(self, request, response):
         response.success = True
         return response
+
+    def _stop_robot(self):
+        self.linear_x = 0.0
+        self.linear_y = 0.0
+        self.angular_z = 0.0
+        if self.machine_type == 'MentorPi_Mecanum':
+            speeds = self.mecanum.set_velocity(0.0, 0.0, 0.0)
+            self.motor_pub.publish(speeds)
+        elif self.machine_type == 'MentorPi_Acker':
+            speeds = self.ackermann.set_velocity(0.0, 0.0)
+            self.motor_pub.publish(speeds[1])
+            servo_state = PWMServoState()
+            servo_state.id = [3]
+            servo_state.position = [int(speeds[0])]
+            data = SetPWMServoState()
+            data.state = [servo_state]
+            data.duration = 0.02
+            self.servo_state_pub.publish(data)
+
+    def _cmd_vel_watchdog(self):
+        elapsed = time.time() - self._last_cmd_vel_time
+        if elapsed > self._cmd_vel_timeout and not self._robot_stopped:
+            self.get_logger().warning('cmd_vel timeout (%.1fs) - stopping robot' % elapsed)
+            self._stop_robot()
+            self._robot_stopped = True
 
     def shutdown(self, signum, frame):
         self.get_logger().info('\033[1;32m%s\033[0m' % 'shutdown')
@@ -217,6 +247,8 @@ class Controller(Node):
     #             data.duration = 0.02
     #             self.servo_state_pub.publish(data)
     def cmd_vel_callback(self, msg):
+        self._last_cmd_vel_time = time.time()
+        self._robot_stopped = False
         if self.machine_type == 'MentorPi_Mecanum':
             self.linear_x = msg.linear.x
             self.linear_y = msg.linear.y
@@ -247,6 +279,14 @@ class Controller(Node):
                 self.angular_z = 0.0
                 speeds = self.ackermann.set_velocity(self.linear_x, self.angular_z)
                 self.motor_pub.publish(speeds[1])
+
+                servo_state = PWMServoState()
+                servo_state.id = [3]
+                servo_state.position = [int(speeds[0])]
+                data = SetPWMServoState()
+                data.state = [servo_state]
+                data.duration = 0.02
+                self.servo_state_pub.publish(data)
 
     def cal_odom_fun(self):
         while True:

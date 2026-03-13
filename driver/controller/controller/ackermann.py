@@ -31,7 +31,7 @@ class AckermannChassis:
                 steering_angle = theta
                 # print(math.degrees(steering_angle))
                 if abs(steering_angle) > math.radians(45):
-                    steering_angle = math.radians(45)
+                    steering_angle = math.copysign(math.radians(45), steering_angle)
                     # for i in range(4):
                         # msg = MotorState()
                         # msg.id = i + 1
@@ -62,5 +62,5 @@ class AckermannChassis:
                 data.append(msg)
             msg = MotorsState()
             msg.data = data
-            return None, msg
+            return servo_angle, msg
 
