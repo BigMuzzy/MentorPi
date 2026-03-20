@@ -106,7 +106,7 @@ class RosRobotController(Node):
         return response
 
     def _board_health_check(self):
-        if not self._reception_enabled:
+        if not self.board.enable_recv:
             return
         last_imu = self.board.imu_last_recv_time
         if last_imu == 0.0:

@@ -6,4 +6,5 @@ echo "Restarting udev"
 echo ""
 sudo service udev reload
 sudo service udev restart
+sudo udevadm trigger
 echo "finish "
