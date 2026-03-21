@@ -67,6 +67,7 @@ class RosRobotController(Node):
         self.declare_parameter('board_health_timeout', 2.0)
         self._board_health_timeout = self.get_parameter('board_health_timeout').value
         self._board_stall_detected = False
+        self._board_init_time = time.time()
         self.create_timer(1.0, self._board_health_check)
 
         self.get_logger().info('\033[1;32m%s\033[0m' % 'start')
@@ -108,16 +109,18 @@ class RosRobotController(Node):
     def _board_health_check(self):
         if not self.board.enable_recv:
             return
+        now = time.time()
         last_imu = self.board.imu_last_recv_time
-        if last_imu == 0.0:
-            return
-        elapsed = time.time() - last_imu
+        # Use time-since-init as elapsed when no IMU has ever arrived (startup failure)
+        elapsed = now - last_imu if last_imu != 0.0 else now - self._board_init_time
         if elapsed > self._board_health_timeout:
             if not self._board_stall_detected:
                 self._board_stall_detected = True
                 self.get_logger().error(
                     'Board UART stall detected (no IMU for %.1fs) - resetting serial port' % elapsed
                 )
+                self.board.imu_last_recv_time = 0.0  # clear so elapsed is measured from reset
+                self._board_init_time = now
                 self.board.reset_port()
                 self.board.set_motor_speed([[1, 0], [2, 0], [3, 0], [4, 0]])
                 self.get_logger().info('Serial port reset complete, motors stopped')
