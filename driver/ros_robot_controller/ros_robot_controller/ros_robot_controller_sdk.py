@@ -96,13 +96,14 @@ class Board:
             'GAMEPAD_BUTTON_MASK_R1':        0x8000
     }
 
-    def __init__(self, device="/dev/rrc", baudrate=1000000, timeout=10):
+    def __init__(self, device="/dev/rrc", baudrate=1000000, timeout=0.5):
         self.enable_recv = False
         self.frame = []
         self.recv_count = 0
         self._device = device
         self._baudrate = baudrate
         self._timeout = timeout
+        self._resetting = False  # flag for recv_task to pause during reset
 
         self.port = serial.Serial(None, baudrate, timeout=timeout)
         self.port.rts = False
@@ -330,7 +331,10 @@ class Board:
         buf.append(checksum_crc8(bytes(buf[2:])))
         buf = bytes(buf)
         with self.write_lock:
-            self.port.write(buf)
+            try:
+                self.port.write(buf)
+            except (serial.SerialException, OSError):
+                pass
 
 
     def set_led(self, on_time, off_time, repeat=1, led_id=1):
@@ -485,29 +489,39 @@ class Board:
         return self.bus_servo_read_and_unpack(servo_id, 0x0D, "<BBbb")
 
     def reset_port(self):
-        """Close and reopen the serial port to recover from UART stall."""
+        """Close and reopen the serial port to recover from UART stall.
+
+        Sets _resetting flag so recv_task pauses and doesn't read from the
+        port mid-reset.  Reuses the same Serial object (just close/open)
+        to avoid a dangling-reference race with recv_task.
+        """
+        self._resetting = True
+        time.sleep(0.1)  # let recv_task see the flag and stop reading
         with self.write_lock:
             try:
                 self.port.close()
             except Exception:
                 pass
             time.sleep(0.1)
-            self.port = serial.Serial(None, self._baudrate, timeout=self._timeout)
-            self.port.rts = False
-            self.port.dtr = False
-            self.port.setPort(self._device)
-            self.port.open()
+            try:
+                self.port.open()
+            except Exception:
+                pass
             # Reset parser state machine
             self.state = PacketControllerState.PACKET_CONTROLLER_STATE_STARTBYTE1
             self.frame = []
             self.recv_count = 0
         time.sleep(0.2)
+        self._resetting = False
 
     def enable_reception(self, enable=True):
         self.enable_recv = enable
 
     def recv_task(self):
         while True:
+            if self._resetting:
+                time.sleep(0.05)
+                continue
             if self.enable_recv:
                 try:
                     recv_data = self.port.read()
