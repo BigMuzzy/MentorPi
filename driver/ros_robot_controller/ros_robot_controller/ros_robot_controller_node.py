@@ -70,7 +70,6 @@ class RosRobotController(Node):
         self._board_init_time = time.time()
         self._board_last_reset_time = 0.0
         self._board_reset_count = 0
-        self._board_reset_max = 3  # max resets before giving up
         self.create_timer(1.0, self._board_health_check)
 
         self.get_logger().info('\033[1;32m%s\033[0m' % 'start')
@@ -117,34 +116,25 @@ class RosRobotController(Node):
         if elapsed > self._board_health_timeout:
             if not self._board_stall_detected:
                 self._board_stall_detected = True
-                if self._board_reset_count >= self._board_reset_max:
-                    self.get_logger().error(
-                        'Board UART stall (no IMU for %.1fs) - max resets (%d) reached, not resetting'
-                        % (elapsed, self._board_reset_max)
-                    )
-                else:
-                    since_last_reset = now - self._board_last_reset_time
-                    if self._board_last_reset_time == 0.0 or since_last_reset > 30.0:
-                        self._board_reset_count += 1
-                        self.get_logger().error(
-                            'Board UART stall (no IMU for %.1fs) - resetting serial port (%d/%d)'
-                            % (elapsed, self._board_reset_count, self._board_reset_max)
-                        )
-                        self.board.imu_last_recv_time = 0.0
-                        self._board_init_time = now
-                        self._board_last_reset_time = now
-                        self.board.reset_port()
-                        self.board.set_motor_speed([[1, 0], [2, 0], [3, 0], [4, 0]])
-                        self.get_logger().info('Serial port reset complete, motors stopped')
-                    else:
-                        self.get_logger().warn(
-                            'Board UART stall (no IMU for %.1fs) - cooldown (%.0fs remaining)'
-                            % (elapsed, 30.0 - since_last_reset)
-                        )
+                self.get_logger().warn(
+                    'Board UART stall detected (no IMU for %.1fs)' % elapsed
+                )
+            # Attempt reset with 30s cooldown between attempts
+            since_last_reset = now - self._board_last_reset_time
+            if self._board_last_reset_time == 0.0 or since_last_reset > 30.0:
+                self._board_reset_count += 1
+                self.get_logger().error(
+                    'Resetting serial port (attempt %d)' % self._board_reset_count
+                )
+                self.board.imu_last_recv_time = 0.0
+                self._board_init_time = now
+                self._board_last_reset_time = now
+                self.board.reset_port()
+                self.board.set_motor_speed([[1, 0], [2, 0], [3, 0], [4, 0]])
         else:
             if self._board_stall_detected:
                 self.get_logger().info('Board communication recovered')
-                self._board_reset_count = 0  # reset counter on successful recovery
+                self._board_reset_count = 0
             self._board_stall_detected = False
 
     def pub_callback(self):
